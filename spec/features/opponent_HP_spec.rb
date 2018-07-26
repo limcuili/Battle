@@ -5,4 +5,10 @@ feature 'See Player 2 Hit Points (HP)' do
     expect(page).to have_content 'Player 2: 100HP'
   end
 
+  scenario 'confirms that Player 2 has been attacked' do
+      sign_in_and_play
+      click_button('Attack')
+      expect(page).to have_content 'Player 2 has been attacked'
+  end
+
 end
